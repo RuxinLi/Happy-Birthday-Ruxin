@@ -87,7 +87,7 @@
     </div>
       <div class="w3-content w3-container w3-padding-64" id="MyWords">
         <h3 class="w3-center">写在小李生日之际</h3>
-        <h4 class="w3-right"><em>爱你的小盛</em></h4>
+        <p class="w3-center"><em>爱你的小盛</em></p>
         <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer.
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Ut enim ad minim veniam,
@@ -123,9 +123,10 @@
      <!-- Container (Portfolio Section) -->
     <div class="w3-content w3-container w3-padding-64" id="HotGirlOnTheWay">
         <h3 class="w3-center">Hot Girl On The Way</h3>
-        <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make
-                them bigger</em></p><br>
-
+        <p class="w3-center"><em>2022年年初，小李和小盛达到了肥胖巅峰</em></p><br>
+        <div class="w3-col m6 w3-hide-small w3-padding-large">
+                <p>这必然得益于每周某个不洗头的工作日晚上小李做的三盒曲奇（或者）饼干。我这么说可能对豉油皇炒面，梅干菜肉饼，特辣新疆炒米粉，豪华版螺狮粉，如昕秘制豆皮，和几十个化成脂肪的蛋挞、红豆小酥不公平。</p>
+            </div>
         <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
         <div class="w3-row-padding w3-center">
             <div class="w3-col m3">
@@ -179,14 +180,6 @@
 
     <script>
         // Toggle grid padding
-        function myFunction() {
-            var x = document.getElementById("myGrid");
-            if (x.className === "w3-row") {
-                x.className = "w3-row-padding";
-            } else {
-                x.className = x.className.replace("w3-row-padding", "w3-row");
-            }
-        }
 
         // Open and close sidebar
         function w3_open() {
@@ -196,6 +189,33 @@
 
         function w3_close() {
             document.getElementById("mySidebar").style.display = "none";
+        }
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+
+        // Change style of navbar on scroll
+        window.onscroll = function () { myFunction() };
+        function myFunction() {
+            var navbar = document.getElementById("myNavbar");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+            } else {
+                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+            }
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
         }
     </script>
 
