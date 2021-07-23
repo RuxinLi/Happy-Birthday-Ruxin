@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Happy Birthday Ruxin!</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -55,16 +55,17 @@
 
         <!-- Photo Grid -->
         <div class="w3-row" id="Pics" style="margin-bottom:128px">
-            <div class="w3-third">
+            <div class="w3-third piclist">
                 <img src="piaoliang/1.JPG" style="width:100%">
                 <img src="piaoliang/2.JPG" style="width:100%">
                 <img src="piaoliang/3.JPG" style="width:100%">
                 <img src="piaoliang/4.JPG" style="width:100%">
                 <img src="piaoliang/5.JPG" style="width:100%">
                 <img src="piaoliang/6.JPG" style="width:100%">
+                
             </div>
 
-            <div class="w3-third">
+            <div class="w3-third piclist">
                 <img src="piaoliang/7.JPG" style="width:100%">
                 <img src="piaoliang/8.JPG" style="width:100%">
                 <img src="piaoliang/9.JPG" style="width:100%">
@@ -73,7 +74,7 @@
                 <img src="piaoliang/12.JPG" style="width:100%">
             </div>
 
-            <div class="w3-third">
+            <div class="w3-third piclist">
                 <img src="piaoliang/13.JPG" style="width:100%">
                 <img src="piaoliang/14.JPG" style="width:100%">
                 <img src="piaoliang/15.JPG" style="width:100%">
@@ -81,6 +82,7 @@
                 <img src="piaoliang/2.JPG" style="width:100%">
                 <img src="piaoliang/3.JPG" style="width:100%">
             </div>
+            <button class="w3-button w3-padding-large w3-light-grey " style="margin-top:64px" id="loadmore">LOAD MORE</button>
         </div>
 
         <!-- End Page Content -->
@@ -173,8 +175,23 @@
     </footer>
 
     <script>
-        // Toggle grid padding
+        // load more
+                const loadmore = document.querySelector('#loadmore');
+        let currentItems = 1;
+        loadmore.addEventListener('click', (e) => {
+            const elementList = [...document.querySelectorAll('.w3-row .piclist')];
+            for (let i = currentItems; i < currentItems + 1; i++) {
+                if (elementList[i]) {
+                    elementList[i].style.display = 'block';
+                }
+            }
+            currentItems += 1;
 
+            // Load more button will be hidden after list fully loaded
+            if (currentItems >= elementList.length) {
+                event.target.style.display = 'none';
+            }
+        })
         // Open and close sidebar
         function w3_open() {
             document.getElementById("mySidebar").style.width = "100%";
