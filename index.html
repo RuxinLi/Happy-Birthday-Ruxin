@@ -19,25 +19,25 @@
     .w3-row-padding img {
         margin-bottom: 12px
     }
-    .piclist {
+    ..pic {
     display: none;
 }
-    .w3-row .piclist:nth-child(1) {
+     .piclist .pic:nth-child(1) {
     display: block;
 }
-.w3-row .piclist:nth-child(2) {
+.piclist  .pic:nth-child(2) {
     display: block;
 }
-    .w3-row .piclist:nth-child(3) {
+     .piclist . pic :nth-child(3) {
     display: block;
 }
-    .w3-row .piclist:nth-child(4) {
+    .piclist  .pic:nth-child(4) {
     display: block;
 }
-    .w3-row .piclist:nth-child(5) {
+    .piclist  .pic:nth-child(5) {
     display: block;
 }
-    .w3-row .piclist:nth-child(6) {
+     .piclist  .pic:nth-child(6) {
     display: block;
 }
     
@@ -77,24 +77,24 @@
         <!-- Photo Grid -->
         <div class="w3-row" id="Pics" style="margin-bottom:128px">
             <div class="w3-third piclist">
-                <img src="piaoliang/1.JPG" style="width:100%">
-                <img src="piaoliang/2.JPG" style="width:100%">
-                <img src="piaoliang/3.JPG" style="width:100%">
-                <img src="piaoliang/4.JPG" style="width:100%">
-                <img src="piaoliang/5.JPG" style="width:100%">
-                <img src="piaoliang/6.JPG" style="width:100%">
-                <img src="piaoliang/7.JPG" style="width:100%">
-                <img src="piaoliang/8.JPG" style="width:100%">
-                <img src="piaoliang/9.JPG" style="width:100%">
-                <img src="piaoliang/10.JPG" style="width:100%">
-                <img src="piaoliang/11.JPG" style="width:100%">
-                <img src="piaoliang/12.JPG" style="width:100%">
-                <img src="piaoliang/13.JPG" style="width:100%">
-                <img src="piaoliang/14.JPG" style="width:100%">
-                <img src="piaoliang/15.JPG" style="width:100%">
-                <img src="piaoliang/1.JPG" style="width:100%">
-                <img src="piaoliang/2.JPG" style="width:100%">
-                <img src="piaoliang/3.JPG" style="width:100%">
+                <img src="piaoliang/1.JPG" class="pic" style="width:100%">
+                <img src="piaoliang/2.JPG" class="pic"  style="width:100%">
+                <img src="piaoliang/3.JPG" class="pic"  style="width:100%">
+                <img src="piaoliang/4.JPG"  class="pic" style="width:100%">
+                <img src="piaoliang/5.JPG" class="pic"  style="width:100%">
+                <img src="piaoliang/6.JPG" class="pic"  style="width:100%">
+                <img src="piaoliang/7.JPG" class="pic"  style="width:100%">
+                <img src="piaoliang/8.JPG" class="pic" style="width:100%">
+                <img src="piaoliang/9.JPG" class="pic" style="width:100%">
+                <img src="piaoliang/10.JPG" class="pic"  style="width:100%">
+                <img src="piaoliang/11.JPG"  class="pic" style="width:100%">
+                <img src="piaoliang/12.JPG" class="pic" style="width:100%">
+                <img src="piaoliang/13.JPG" class="pic"  style="width:100%">
+                <img src="piaoliang/14.JPG" class="pic" style="width:100%">
+                <img src="piaoliang/15.JPG" class="pic" style="width:100%">
+                <img src="piaoliang/1.JPG" class="pic" style="width:100%">
+                <img src="piaoliang/2.JPG" class="pic" style="width:100%">
+                <img src="piaoliang/3.JPG" class="pic" style="width:100%">
             </div>
         </div>
          <p class="w3-padding-16"><button class="w3-button w3-padding-large w3-light-grey " style="margin-top:64px" id="loadmore">LOAD MORE</button></p>
@@ -191,7 +191,7 @@
                 const loadmore = document.querySelector('#loadmore');
         let currentItems = 6;
         loadmore.addEventListener('click', (e) => {
-            const elementList = [...document.querySelectorAll('.w3-row .piclist')];
+            const elementList = [...document.querySelectorAll('.piclist .pic ')];
             for (let i = currentItems; i < currentItems + 6; i++) {
                 if (elementList[i]) {
                     elementList[i].style.display = 'block';
