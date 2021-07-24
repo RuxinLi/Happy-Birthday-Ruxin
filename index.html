@@ -20,12 +20,13 @@
     .w3-row-padding img {
         margin-bottom: 12px
     }
-    .pics {
+    .pic2 {
     display: none;
 }
-     .pics:nth-child(1) {
-    display: block;
+  .pic3 {
+    display: none;
 }
+
 
  
 </style>
@@ -66,7 +67,7 @@
   <div class="w3-col s4  w3-center pics" style="margin-bottom:128px">
    <img src="birthdayPic/hotg (1).JPG" class="pic1" style="width:100%">
       <img src="piaoliang/1.JPG" class="pic2" style="width:100%">
-       <img src="piaoliang/14.JPG" class="pic" style="width:100%">
+       <img src="piaoliang/14.JPG" class="pic3" style="width:100%">
   </div>
   <div class="w3-col s4  w3-center pics">
      <img src="birthdayPic/b2.JPG" class="pic1"  style="width:100%">
@@ -76,7 +77,7 @@
   <div class="w3-col s4  w3-center pics">
     <img src="birthdayPic/hotg (2).JPG" class="pic1"  style="width:100%">
       <img src="piaoliang/6.JPG" class="pic2"  style="width:100%">
-         <img src="piaoliang/12.JPG" class="pic"  style="width:100%">
+         <img src="piaoliang/12.JPG" class="pic3"  style="width:100%">
   </div>
       <div class="w3-row"> <p class="w3-padding-16"><button class="w3-button w3-white w3-center" id="loadmore">Load More</button></p></div>
     </div>
@@ -209,18 +210,22 @@
     <script>
         // load more
                 const loadmore = document.querySelector('#loadmore');
-        let currentItems = 1;
+        let currentItems = 0;
         loadmore.addEventListener('click', (e) => {
-            const elementList = [...document.querySelectorAll('.pics ')];
+            const elementList2 = [...document.querySelectorAll('.pic2 ')];
+             const elementList3 = [...document.querySelectorAll('.pic3 ')];
             for (let i = currentItems; i < currentItems + 1; i++) {
-                if (elementList[i]) {
-                    elementList[i].style.display = 'block';
+                if (elementList2[i]) {
+                    elementList2[i].style.display = 'block';
+                }
+                if (elementList3[i]) {
+                    elementList3[i].style.display = 'block';
                 }
             }
             currentItems += 1;
 
             // Load more button will be hidden after list fully loaded
-            if (currentItems >= elementList.length) {
+            if (currentItems >= elementList2.length) {
                 event.target.style.display = 'none';
             }
         })
