@@ -20,6 +20,9 @@
     .w3-row-padding img {
         margin-bottom: 12px
     }
+        .pic1 {
+    display: none;
+}
     .pic2 {
     display: none;
 }
@@ -65,18 +68,18 @@
             </header>
         </div>
   <div class="w3-col s4  w3-center pics" style="margin-bottom:128px">
-   <img src="birthdayPic/hotg (1).JPG" class="pic1" style="width:100%">
-      <img src="piaoliang/1.JPG" class="pic2" style="width:100%">
-       <img src="piaoliang/14.JPG" class="pic3" style="width:100%">
+   <img src="birthdayPic/hotg (1).JPG" class="pic1" style="width:100%; display:block" >
+      <img src="piaoliang/1.JPG" class="pic1" style="width:100%; display:block">
+       <img src="piaoliang/14.JPG" class="pic1" style="width:100%; display:block">
   </div>
   <div class="w3-col s4  w3-center pics">
-     <img src="birthdayPic/b2.JPG" class="pic1"  style="width:100%">
+     <img src="birthdayPic/b2.JPG" class="pic2"  style="width:100%">
         <img src="piaoliang/3.JPG" class="pic2"  style="width:100%">
-       <img src="piaoliang/7.JPG" class="pic3"  style="width:100%">
+       <img src="piaoliang/7.JPG" class="pic2"  style="width:100%">
   </div>
   <div class="w3-col s4  w3-center pics">
-    <img src="birthdayPic/hotg (2).JPG" class="pic1"  style="width:100%">
-      <img src="piaoliang/6.JPG" class="pic2"  style="width:100%">
+    <img src="birthdayPic/hotg (2).JPG" class="pic3"  style="width:100%">
+      <img src="piaoliang/6.JPG" class="pic3"  style="width:100%">
          <img src="piaoliang/12.JPG" class="pic3"  style="width:100%">
   </div>
       <div class="w3-row"> <p class="w3-padding-16"><button class="w3-button w3-white w3-center" id="loadmore">Load More</button></p></div>
@@ -210,8 +213,9 @@
     <script>
         // load more
                 const loadmore = document.querySelector('#loadmore');
-        let currentItems = 0;
+        let currentItems = 1;
         loadmore.addEventListener('click', (e) => {
+             const elementList1 = [...document.querySelectorAll('.pic1 ')];
             const elementList2 = [...document.querySelectorAll('.pic2 ')];
              const elementList3 = [...document.querySelectorAll('.pic3 ')];
             for (let i = currentItems; i < currentItems + 1; i++) {
@@ -220,6 +224,9 @@
                 }
                 if (elementList3[i]) {
                     elementList3[i].style.display = 'block';
+                }
+                if (elementList1[i]) {
+                    elementList1[i].style.display = 'block';
                 }
             }
             currentItems += 1;
