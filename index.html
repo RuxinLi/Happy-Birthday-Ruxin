@@ -23,15 +23,10 @@
     .pic {
     display: none;
 }
-     .pic:nth-child(1) {
+     .pics:nth-child(1) {
     display: block;
 }
-  .pic:nth-child(2) {
-    display: block;
-}
-. pic :nth-child(3) {
-    display: block;
-}
+
  
 </style>
 
@@ -68,17 +63,17 @@
            
             </header>
         </div>
-  <div class="w3-col s4  w3-center">
+  <div class="w3-col s4  w3-center pics">
    <img src="birthdayPic/hotg (1).JPG" class="pic" style="width:100%;margin-bottom:128px">
       <img src="piaoliang/1.JPG" class="pic" style="width:100%">
        <img src="piaoliang/14.JPG" class="pic" style="width:100%">
   </div>
-  <div class="w3-col s4  w3-center">
+  <div class="w3-col s4  w3-center pics">
      <img src="birthdayPic/b2.JPG" class="pic"  style="width:100%">
         <img src="piaoliang/3.JPG" class="pic"  style="width:100%">
        <img src="piaoliang/3.JPG" class="pic"  style="width:100%">
   </div>
-  <div class="w3-col s4  w3-center">
+  <div class="w3-col s4  w3-center pics">
     <img src="birthdayPic/hotg (2).JPG" class="pic"  style="width:100%">
       <img src="piaoliang/6.JPG" class="pic"  style="width:100%">
          <img src="piaoliang/12.JPG" class="pic"  style="width:100%">
@@ -214,15 +209,15 @@
     <script>
         // load more
                 const loadmore = document.querySelector('#loadmore');
-        let currentItems = 3;
+        let currentItems = 1;
         loadmore.addEventListener('click', (e) => {
-            const elementList = [...document.querySelectorAll('.pic ')];
-            for (let i = currentItems; i < currentItems + 3; i++) {
+            const elementList = [...document.querySelectorAll('.pics ')];
+            for (let i = currentItems; i < currentItems + 1; i++) {
                 if (elementList[i]) {
                     elementList[i].style.display = 'block';
                 }
             }
-            currentItems += 3;
+            currentItems += 1;
 
             // Load more button will be hidden after list fully loaded
             if (currentItems >= elementList.length) {
