@@ -65,8 +65,7 @@
             <header class="w3-center w3-margin-bottom">
                 <h1><b>Happy Birthday Ruxin!</b></h1>
                 <p><b>Explore your 2021 Journey with me.</b></p>
-                <!-- <p class="w3-padding-16"><button class="w3-button w3-black" onclick="myFunction()">Toggle Grid
-                        Padding</button></p> -->
+           
             </header>
         </div>
 
@@ -101,8 +100,20 @@
                 <img src="piaoliang/3.JPG" class="pic" style="width:100%">
              </div> -->
         </div>
-
+           
+<div class="w3-row" id="Pics" style="margin-bottom:128px">
+            <div class="w3-third">
+                <img src="piaoliang/1.JPG" class="pic" style="width:100%">
+            </div>
+             <div class="w3-third">
+                <img src="piaoliang/3.JPG" class="pic"  style="width:100%">
+            </div>
+             <div class="w3-third">
+                 <img src="piaoliang/6.JPG" class="pic"  style="width:100%">
+            </div>
+        </div>
     </div>
+      <p class="w3-padding-16"><button class="w3-button w3-black" id="loadmore">Load More</button></p>
       <div class="w3-content w3-container w3-padding-64" id="MyWords">
         <h3 class="w3-center">写在小李生日之际</h3>
         <p class="w3-center"><em>爱你的小盛</em></p>
@@ -231,15 +242,15 @@
     <script>
         // load more
                 const loadmore = document.querySelector('#loadmore');
-        let currentItems = 6;
+        let currentItems = 3;
         loadmore.addEventListener('click', (e) => {
-            const elementList = [...document.querySelectorAll('.piclist .pic ')];
-            for (let i = currentItems; i < currentItems + 6; i++) {
+            const elementList = [...document.querySelectorAll('.pic ')];
+            for (let i = currentItems; i < currentItems + 3; i++) {
                 if (elementList[i]) {
                     elementList[i].style.display = 'block';
                 }
             }
-            currentItems += 6;
+            currentItems += 3;
 
             // Load more button will be hidden after list fully loaded
             if (currentItems >= elementList.length) {
